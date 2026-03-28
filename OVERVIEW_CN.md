@@ -179,8 +179,8 @@ overrides:
 | `prd-from-idea` | `raw-idea` | `prd` | ✅ v0.1.0 |
 | `spec-from-prd` | `prd`, `design-assets?` | `tech-spec` | ✅ v0.1.0 |
 | `plan-from-spec` | `tech-spec` | `task-list` | ✅ v0.1.0 |
-| `review-standard` | `code-diff`, `tech-spec?` | `review` | 🚧 规划中 |
-| `release-conventional` | `review`, `task-list?` | `release-notes` | 🚧 规划中 |
+| `review-standard` | `code-diff`, `tech-spec?` | `review` | ✅ v0.1.0 |
+| `release-conventional` | `review`, `task-list?` | `release-notes` | ✅ v0.1.0 |
 
 ---
 
@@ -224,8 +224,8 @@ Git 原生、人可读、零基础设施。`.ai/context/` 相当于构建缓存�
 
 ## 路线图
 
-- [ ] `review-standard` skill
-- [ ] `release-conventional` skill
+- [x] `review-standard` skill
+- [x] `release-conventional` skill
 - [ ] Orchestrator 作为 Claude Code skill（让 `/orchestrate` 可用）
 - [ ] examples/ 自动化测试运行器
 - [ ] `prd-from-figma` skill（MCP Figma 集成）

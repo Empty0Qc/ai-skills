@@ -1,0 +1,21 @@
+name: review-standard
+version: 0.1.0
+description: 对代码变更做全面 Code Review，覆盖正确性、安全、性能、规范、与技术方案对齐
+
+consumes:
+  - code-diff
+  - tech-spec?
+
+produces:
+  - review
+
+triggers:
+  manual: /review
+  auto: post-commit
+
+model_agnostic: true
+min_context_tokens: 12000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [review, quality, security, backend, frontend]

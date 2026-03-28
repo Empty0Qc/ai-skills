@@ -1,0 +1,21 @@
+name: release-conventional
+version: 0.1.0
+description: 从 Review 和任务清单生成 Conventional Commits 风格的 Changelog 和上线 Checklist
+
+consumes:
+  - review
+  - task-list?
+
+produces:
+  - release-notes
+
+triggers:
+  manual: /release
+  auto: pre-push
+
+model_agnostic: true
+min_context_tokens: 6000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [release, changelog, devops, conventional-commits]

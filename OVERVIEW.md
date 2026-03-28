@@ -184,8 +184,8 @@ overrides:
 | `prd-from-idea` | `raw-idea` | `prd` | ✅ v0.1.0 |
 | `spec-from-prd` | `prd`, `design-assets?` | `tech-spec` | ✅ v0.1.0 |
 | `plan-from-spec` | `tech-spec` | `task-list` | ✅ v0.1.0 |
-| `review-standard` | `code-diff`, `tech-spec?` | `review` | 🚧 planned |
-| `release-conventional` | `review`, `task-list?` | `release-notes` | 🚧 planned |
+| `review-standard` | `code-diff`, `tech-spec?` | `review` | ✅ v0.1.0 |
+| `release-conventional` | `review`, `task-list?` | `release-notes` | ✅ v0.1.0 |
 
 ---
 
@@ -244,8 +244,8 @@ is a better fit than a Python orchestration framework.
 
 ## Roadmap
 
-- [ ] `review-standard` skill
-- [ ] `release-conventional` skill
+- [x] `review-standard` skill
+- [x] `release-conventional` skill
 - [ ] Orchestrator as a Claude Code skill (so `/orchestrate` works)
 - [ ] Test runner for examples/
 - [ ] `prd-from-figma` skill (MCP Figma integration)
