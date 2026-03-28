@@ -181,6 +181,7 @@ overrides:
 | `plan-from-spec` | `tech-spec` | `task-list` | ✅ v0.1.0 |
 | `review-standard` | `code-diff`, `tech-spec?` | `review` | ✅ v0.1.0 |
 | `release-conventional` | `review`, `task-list?` | `release-notes` | ✅ v0.1.0 |
+| `orchestrate` | `*`（读取所有已有 artifact） | `*`（调用对应 skill） | ✅ v0.1.0 |
 
 ---
 
@@ -220,13 +221,15 @@ Git 原生、人可读、零基础设施。`.ai/context/` 相当于构建缓存�
 
 - **2026-03-28** — 发布至 GitHub（`git@github.com:Empty0Qc/ai-skills.git`），作为 submodule 接入 mk_p。**踩坑**：`git submodule add` 失败时会在 `.git/modules/{name}` 留下残留状态，下次重试前必须先 `rm -rf .git/modules/ai-skills`，否则依然报错。
 
+- **2026-03-29** — 完成 `review-standard`、`release-conventional`、`orchestrate` 三个 skill。全部 6 个核心 skill 就位，`full-sdlc` 流水线首次完整可用。`orchestrate` 设计了"最多连续自动执行 3 步后暂停"的机制，防止用户失去对流程的感知。
+
 ---
 
 ## 路线图
 
 - [x] `review-standard` skill
 - [x] `release-conventional` skill
-- [ ] Orchestrator 作为 Claude Code skill（让 `/orchestrate` 可用）
+- [x] Orchestrator 作为 Claude Code skill（让 `/orchestrate` 可用）
 - [ ] examples/ 自动化测试运行器
 - [ ] `prd-from-figma` skill（MCP Figma 集成）
 - [ ] GitHub Actions CI（skill PR 自动验证）

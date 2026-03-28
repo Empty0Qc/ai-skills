@@ -6,6 +6,13 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.3.0] - 2026-03-29
+
+### Added
+- `orchestrate` skill: pipeline state machine — scans `.ai/context/`, determines next stage, auto-executes up to 3 skills before pausing for user confirmation
+
+---
+
 ## [0.2.0] - 2026-03-29
 
 ### Added
@@ -13,6 +20,7 @@ versioning follows [Semantic Versioning](https://semver.org/).
 - `release-conventional` skill: Conventional Commits changelog generation + deployment checklist, with examples
 - `README.md`: integration guide in Chinese (quick start, daily usage, FAQ)
 - `OVERVIEW_CN.md`: full architecture document in Chinese
+- `CHANGELOG.md`: this file
 
 ---
 

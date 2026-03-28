@@ -1,0 +1,20 @@
+name: orchestrate
+version: 0.1.0
+description: 扫描当前 .ai/context/ 状态，判断流水线进度，引导执行下一个可用 skill
+
+consumes:
+  - "*"   # 读取所有已存在的 artifact，不要求任何必须存在
+
+produces:
+  - "*"   # 根据状态决定调用哪个 skill，由该 skill 写入对应 artifact
+
+triggers:
+  manual: /orchestrate
+  auto: false
+
+model_agnostic: true
+min_context_tokens: 4000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [meta, orchestration, pipeline]

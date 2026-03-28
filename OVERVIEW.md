@@ -186,6 +186,7 @@ overrides:
 | `plan-from-spec` | `tech-spec` | `task-list` | ✅ v0.1.0 |
 | `review-standard` | `code-diff`, `tech-spec?` | `review` | ✅ v0.1.0 |
 | `release-conventional` | `review`, `task-list?` | `release-notes` | ✅ v0.1.0 |
+| `orchestrate` | `*` (reads all existing artifacts) | `*` (delegates to appropriate skill) | ✅ v0.1.0 |
 
 ---
 
@@ -246,7 +247,7 @@ is a better fit than a Python orchestration framework.
 
 - [x] `review-standard` skill
 - [x] `release-conventional` skill
-- [ ] Orchestrator as a Claude Code skill (so `/orchestrate` works)
+- [x] Orchestrator as a Claude Code skill (so `/orchestrate` works)
 - [ ] Test runner for examples/
 - [ ] `prd-from-figma` skill (MCP Figma integration)
 - [ ] GitHub Actions workflow for CI on skill PRs
