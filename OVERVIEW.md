@@ -110,7 +110,7 @@ ai-skills/
 
 ```bash
 # Add as submodule
-git submodule add https://github.com/YOUR_ORG/ai-skills.git ai-skills
+git submodule add git@github.com:Empty0Qc/ai-skills.git ai-skills
 
 # Run setup
 sh ai-skills/setup.sh
@@ -124,7 +124,7 @@ This creates:
 ### Option B: Clone directly
 
 ```bash
-git clone https://github.com/YOUR_ORG/ai-skills.git ai-skills
+git clone git@github.com:Empty0Qc/ai-skills.git ai-skills
 sh ai-skills/setup.sh
 ```
 
@@ -234,6 +234,11 @@ is a better fit than a Python orchestration framework.
 - **2026-03-28** — Initial architecture established. Key insight: defining artifact
   types as the interface protocol (not skill names) is what makes the system
   composable. Skills are implementation details; artifacts are the API.
+- **2026-03-28** — Published to GitHub (`git@github.com:Empty0Qc/ai-skills.git`) and
+  wired into mk_p as a git submodule. Host project gitignores `.ai/context/` (runtime
+  state) but commits `.gitmodules` and the submodule reference. Gotcha: `git submodule add`
+  fails if `.git/modules/{name}` has leftover state from a failed attempt — must
+  `rm -rf .git/modules/ai-skills` before retrying.
 
 ---
 
