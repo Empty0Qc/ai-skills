@@ -1,0 +1,20 @@
+name: prd-from-idea
+version: 0.1.0
+description: 从原始想法/访谈记录/需求草稿生成结构化 PRD
+
+consumes:
+  - raw-idea
+
+produces:
+  - prd
+
+triggers:
+  manual: /prd
+  auto: false
+
+model_agnostic: true
+min_context_tokens: 4000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [pm, discovery, requirements]

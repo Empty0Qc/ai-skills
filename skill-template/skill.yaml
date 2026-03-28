@@ -1,0 +1,31 @@
+# Skill Metadata Template
+# Copy this directory to skills/{your-skill-name}/ and fill in the fields.
+
+name: your-skill-name           # kebab-case, unique across the registry
+version: 0.1.0                  # semver; bump minor for prompt changes, major for contract changes
+description: One sentence.      # shown in orchestrator UI and docs
+
+# --- Contract (the "type signature") ---
+consumes:
+  - artifact-type               # required input
+  - another-artifact?           # optional input (? suffix)
+
+produces:
+  - artifact-type               # what this skill writes to .ai/context/
+
+# --- Trigger configuration ---
+triggers:
+  manual: /your-skill-name      # slash command to invoke manually
+  auto: false                   # set to a hook name to auto-trigger
+
+# --- Compatibility ---
+model_agnostic: true            # false if prompt relies on model-specific behavior
+min_context_tokens: 8000        # rough estimate of tokens needed
+tested_models:
+  - claude-sonnet-4-6
+  # - gpt-4o
+
+# --- Discovery ---
+tags: []                        # e.g. [pm, backend, frontend, devops, review]
+author: ""
+source: ""                      # link to original repo/inspiration if derived

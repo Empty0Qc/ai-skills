@@ -1,0 +1,57 @@
+# Artifact Type Registry
+#
+# Every artifact that flows through the pipeline must be declared here.
+# Skills reference these types in their consumes/produces fields.
+# Think of this as the "type system" for the entire skill ecosystem.
+
+artifacts:
+
+  raw-idea:
+    description: Unstructured input — notes, meeting transcripts, voice memos, Slack threads
+    file_pattern: "context/raw-idea.md"
+    human_editable: true
+
+  prd:
+    description: Product Requirements Document — what, why, for whom, success metrics
+    file_pattern: "context/prd.md"
+    human_editable: true
+    depends_on: [raw-idea]
+
+  design-assets:
+    description: Design references — Figma links, screenshots, wireframes, design tokens
+    file_pattern: "context/design-assets.md"
+    human_editable: true
+    optional: true
+
+  tech-spec:
+    description: Technical specification — architecture decisions, API contracts, data models
+    file_pattern: "context/tech-spec.md"
+    human_editable: true
+    depends_on: [prd]
+    optional_deps: [design-assets]
+
+  task-list:
+    description: Structured implementation tasks — ordered, estimated, assignable
+    file_pattern: "context/task-list.md"
+    human_editable: true
+    depends_on: [tech-spec]
+
+  code-diff:
+    description: Code changes — can be a PR link, git diff, or file paths
+    file_pattern: "context/code-diff.md"
+    human_editable: true
+    depends_on: [task-list]
+
+  review:
+    description: Code review output — issues, suggestions, approval status
+    file_pattern: "context/review/{branch}.md"
+    human_editable: true
+    depends_on: [code-diff]
+    optional_deps: [tech-spec]
+
+  release-notes:
+    description: Changelog entry + deployment checklist for this release
+    file_pattern: "context/release-notes.md"
+    human_editable: true
+    depends_on: [review]
+    optional_deps: [task-list]

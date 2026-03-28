@@ -1,0 +1,17 @@
+# Pipeline: Quick Review
+# For when you just need a review + release notes, no full planning cycle.
+
+name: quick-review
+description: Code review and release notes only
+version: 0.1.0
+
+stages:
+  - id: review
+    from: [code-diff, tech-spec?]
+    to: review
+    default_skill: review-standard
+
+  - id: release
+    from: [review]
+    to: release-notes
+    default_skill: release-conventional

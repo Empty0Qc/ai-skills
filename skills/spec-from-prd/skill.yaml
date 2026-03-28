@@ -1,0 +1,21 @@
+name: spec-from-prd
+version: 0.1.0
+description: 从 PRD（可选设计稿）生成技术方案文档
+
+consumes:
+  - prd
+  - design-assets?
+
+produces:
+  - tech-spec
+
+triggers:
+  manual: /spec
+  auto: false
+
+model_agnostic: true
+min_context_tokens: 8000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [architecture, backend, design]

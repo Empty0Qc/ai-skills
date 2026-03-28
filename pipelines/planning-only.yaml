@@ -1,0 +1,17 @@
+# Pipeline: Planning Only
+# For teams that handle requirements elsewhere and just want spec + tasks.
+
+name: planning-only
+description: Technical spec and task breakdown from an existing PRD
+version: 0.1.0
+
+stages:
+  - id: design
+    from: [prd, design-assets?]
+    to: tech-spec
+    default_skill: spec-from-prd
+
+  - id: planning
+    from: [tech-spec]
+    to: task-list
+    default_skill: plan-from-spec

@@ -1,0 +1,44 @@
+# Pipeline: Full SDLC
+# The complete artifact chain from idea to release.
+# Each stage can be replaced by any skill with a compatible contract.
+
+name: full-sdlc
+description: Full software development lifecycle — idea to release
+version: 0.1.0
+
+stages:
+  - id: requirements
+    from: [raw-idea]
+    to: prd
+    default_skill: prd-from-idea
+    # swap example: prd-from-jira, prd-from-figma
+
+  - id: design
+    from: [prd, design-assets?]
+    to: tech-spec
+    default_skill: spec-from-prd
+
+  - id: planning
+    from: [tech-spec]
+    to: task-list
+    default_skill: plan-from-spec
+
+  - id: implementation
+    from: [task-list]
+    to: code-diff
+    default_skill: null        # human-driven; no default skill
+    manual_only: true
+
+  - id: review
+    from: [code-diff, tech-spec?]
+    to: review
+    default_skill: review-standard
+    triggers:
+      auto: post-commit
+
+  - id: release
+    from: [review, task-list?]
+    to: release-notes
+    default_skill: release-conventional
+    triggers:
+      auto: pre-push

@@ -1,0 +1,20 @@
+name: plan-from-spec
+version: 0.1.0
+description: 从技术方案拆解为可执行的任务清单
+
+consumes:
+  - tech-spec
+
+produces:
+  - task-list
+
+triggers:
+  manual: /plan
+  auto: false
+
+model_agnostic: true
+min_context_tokens: 6000
+tested_models:
+  - claude-sonnet-4-6
+
+tags: [planning, tasks, estimation]

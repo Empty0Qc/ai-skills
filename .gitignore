@@ -1,0 +1,6 @@
+# Runtime state — never committed in the skills repo itself
+# (In host projects, .ai/context/ should be gitignored)
+.ai/
+
+# OS
+.DS_Store
