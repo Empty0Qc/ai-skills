@@ -3,7 +3,7 @@
 > 一套可组装、可替换的 AI 辅助研发全流程工具集。
 > 每个 skill 是一个独立的 AI 提示词模块，通过声明输入/输出类型自由组合成流水线。
 
-[架构文档（中文）](OVERVIEW_CN.md) · [Architecture Doc (EN)](OVERVIEW.md) · [贡献指南](CONTRIBUTING.md)
+[架构文档（中文）](OVERVIEW_CN.md) · [Architecture Doc (EN)](OVERVIEW.md) · [贡献指南](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 ---
 
